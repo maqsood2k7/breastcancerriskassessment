@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pinkPurple"
+    tools:context=".MainActivity4">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/statusBar"
+        android:divider="@drawable/empty_tall_divider2"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/headTextFamilyHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/family_history_for_breast_cancer"
+            android:textAlignment="center"
+            android:textColor="#AD1457"
+            android:textSize="28sp" />
+
+        <Switch
+            android:id="@+id/hasAnyoneInFamily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:ems="10"
+            android:freezesText="false"
+            android:minHeight="48dp"
+            android:showText="true"
+            android:switchMinWidth="60dp"
+            android:text="@string/has_anyone_had_cancer"
+            android:textColor="#AD1457"
+            android:textOff="@string/n"
+            android:textOn="@string/y"
+            android:textSize="18sp"
+            tools:checked="false"
+            tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+
+        <Switch
+            android:id="@+id/maternalOrPaternalGrandMotherOrAunt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:ems="10"
+            android:freezesText="false"
+            android:minHeight="48dp"
+            android:showText="true"
+            android:switchMinWidth="60dp"
+            android:text="One Maternal/Paternal Grand Mother/Aunt"
+            android:textColor="#AD1457"
+            android:textOff="@string/n"
+            android:textOn="@string/y"
+            android:textSize="18sp"
+            tools:checked="false"
+            tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+
+        <Switch
+            android:id="@+id/motherOrSister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:ems="10"
+            android:freezesText="false"
+            android:minHeight="48dp"
+            android:showText="true"
+            android:switchMinWidth="60dp"
+            android:text="Mother or Sister"
+            android:textColor="#AD1457"
+            android:textOff="@string/n"
+            android:textOn="@string/y"
+            android:textSize="18sp"
+            tools:checked="false"
+            tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+
+        <Switch
+            android:id="@+id/motherAndSister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:ems="10"
+            android:freezesText="false"
+            android:minHeight="48dp"
+            android:showText="true"
+            android:switchMinWidth="60dp"
+            android:text="Mother and Sister"
+            android:textColor="#AD1457"
+            android:textOff="@string/n"
+            android:textOn="@string/y"
+            android:textSize="18sp"
+            tools:checked="false"
+            tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+
+        <Switch
+            android:id="@+id/motherAndTwoSisters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:ems="10"
+            android:freezesText="false"
+            android:hint="@string/select_gender"
+            android:minHeight="48dp"
+            android:showText="true"
+            android:switchMinWidth="60dp"
+            android:text="Mother and two Sisters"
+            android:textColor="#AD1457"
+            android:textOff="@string/n"
+            android:textOn="@string/y"
+            android:textSize="18sp"
+            tools:checked="false"
+            tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/secondToThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

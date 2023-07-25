@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Breast Cancer Risk Assessment</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="breast_cancer_risk_assessment">Breast Cancer\nRisk Assessment</string>
+    <string name="quote1">Cancer’s Tough,\nBut So Are You</string>
+    <string name="start_assess">Start Assess</string>
+    <string name="patient_s_personal_details">Personal Details</string>
+    <string name="gender">Gender</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="enter_name">What\'s Your Name</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="f">F</string>
+    <string name="m">M</string>
+    <string name="enter_phone_number">Phone Number</string>
+    <string name="next"><![CDATA[Next >>]]></string>
+    <string name="family_history_for_breast_cancer">Family History for Breast Cancer</string>
+    <string name="has_anyone_had_cancer">Has anyone had cancer?</string>
+    <string name="n">N</string>
+    <string name="y">Y</string>
+    <string name="body_structure_head">Select Body Structure</string>
+</resources>

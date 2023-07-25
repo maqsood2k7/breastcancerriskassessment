@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pinkPurple"
+    tools:context=".MainActivity3">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/statusBar"
+        android:divider="@drawable/empty_tall_divider"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/headTextFamilyHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_information"
+            android:textAlignment="center"
+            android:textColor="#AD1457"
+            android:textSize="28sp" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/statusBar"
+            android:ems="10"
+            android:hint="@string/enter_name"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColor="@color/statusBar"
+            android:textColorHint="#AD1457"
+            tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/statusBar"
+            android:ems="10"
+            android:hint="Enter Age"
+            android:inputType="number"
+            android:textColor="@color/statusBar"
+            android:textColorHint="#AD1457" />
+
+        <Switch
+            android:id="@+id/hasAnyoneInFamily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:ems="10"
+            android:freezesText="false"
+            android:hint="@string/select_gender"
+            android:minHeight="48dp"
+            android:showText="true"
+            android:switchMinWidth="60dp"
+            android:text="@string/gender"
+            android:textColor="#AD1457"
+            android:textOff="@string/f"
+            android:textOn="@string/m"
+            android:textSize="18sp"
+            tools:checked="false"
+            tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:backgroundTint="@color/statusBar"
+            android:ems="10"
+            android:hint="@string/enter_phone_number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:textColor="@color/statusBar"
+            android:textColorHint="#AD1457"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <Button
+            android:id="@+id/secondToThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
