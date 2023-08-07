@@ -27,11 +27,11 @@ public class MainActivity4 extends AppCompatActivity {
         gender = i.getStringExtra("gender");
         phone = i.getStringExtra("phone");
 
-        hasAnyoneInFamily = findViewById(R.id.hasAnyoneInFamily);
-        maternalOrPaternalGrandMotherOrAunt = findViewById(R.id.maternalOrPaternalGrandMotherOrAunt);
-        motherOrSister = findViewById(R.id.motherOrSister);
-        motherAndSister = findViewById(R.id.motherAndSister);
-        motherAndTwoSisters = findViewById(R.id.motherAndTwoSisters);
+        hasAnyoneInFamily = findViewById(R.id.lumps);
+        maternalOrPaternalGrandMotherOrAunt = findViewById(R.id.nippleDischarge);
+        motherOrSister = findViewById(R.id.priorBreastInjury);
+        motherAndSister = findViewById(R.id.breastRednessOrSwelling);
+        motherAndTwoSisters = findViewById(R.id.breastTendernessOrPain);
 
 //        // To Enable/Disable Switches
 //        if(hasAnyoneInFamily.isChecked()) {
@@ -97,7 +97,7 @@ public class MainActivity4 extends AppCompatActivity {
             }
         });
 
-        Button secondToThird = findViewById(R.id.secondToThird);
+        Button secondToThird = findViewById(R.id.fifthToSixth);
         secondToThird.setOnClickListener(view -> {
             Intent i1 = new Intent(getApplicationContext(), MainActivity5.class);
             i1.putExtra("name", name);

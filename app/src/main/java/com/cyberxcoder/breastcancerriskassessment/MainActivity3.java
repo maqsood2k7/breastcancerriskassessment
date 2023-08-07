@@ -23,12 +23,12 @@ public class MainActivity3 extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main3);
 
-        Button mainToSecond = findViewById(R.id.secondToThird);
+        Button mainToSecond = findViewById(R.id.fifthToSixth);
 
         mainToSecond.setOnClickListener(view -> {
             name = findViewById(R.id.name);
             age = findViewById(R.id.age);
-            gender = findViewById(R.id.hasAnyoneInFamily);
+            gender = findViewById(R.id.lumps);
             phone = findViewById(R.id.phone);
 
             isAllFieldsChecked = CheckAllFields();

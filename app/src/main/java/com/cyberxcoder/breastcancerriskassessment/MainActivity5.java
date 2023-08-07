@@ -7,9 +7,7 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,11 +17,11 @@ public class MainActivity5 extends AppCompatActivity {
     String bodyStructure, didYouHaveBreastCancer, ageOfGivingBirth, mensturationAge, menopauseAge, doYouBreastFeed;
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     Switch didYouHaveBreastCancerObj, doYouBreastFeedObj;
-    EditText ageOfGivingBirthObj, mensturationAgeObj, menopauseAgeObj;
     Button thirdToFourth;
-    AutoCompleteTextView bodyStructureObj;
+    AutoCompleteTextView ageOfGivingBirthObj, bodyStructureObj, mensturationAgeObj, menopauseAgeObj;
 
-    boolean hasItemSelected = false, isAllFieldsChecked;
+    boolean hasItemSelectedBodyStructure, hasItemSelectedAgeOfGivingBirth, isAllFieldsChecked;
+    boolean hasItemSelectedMensturationAge, hasItemSelectedMenopauseAge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,35 +40,68 @@ public class MainActivity5 extends AppCompatActivity {
         motherAndSister = i.getStringExtra("motherAndSister");
         motherAndTwoSisters = i.getStringExtra("motherAndTwoSisters");
 
+        ageOfGivingBirthObj = findViewById(R.id.ageOfGivingBirth);
         bodyStructureObj = findViewById(R.id.bodyStructure);
+        mensturationAgeObj = findViewById(R.id.mensturationAge);
+        menopauseAgeObj = findViewById(R.id.menopauseAge);
         thirdToFourth = findViewById(R.id.thirdToFourth);
 
+
         String[] bodyStructureItems = {"Underweight", "Normal", "Overweight"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.body_structure_items, bodyStructureItems);
-        bodyStructureObj.setAdapter(adapter);
+        ArrayAdapter<String> adapterBodyStructure = new ArrayAdapter<>(this, R.layout.body_structure_items, bodyStructureItems);
+        bodyStructureObj.setAdapter(adapterBodyStructure);
 
         bodyStructureObj.setOnItemClickListener((adapterView, view, i1, l) -> {
             if(i1 >=0) {
-                hasItemSelected = true;
-                bodyStructure = adapter.getItem(i1);
+                hasItemSelectedBodyStructure = true;
+                bodyStructure = adapterBodyStructure.getItem(i1);
                 bodyStructureObj.setError(null);
-                Toast.makeText(getApplicationContext(), bodyStructure + " " + i1, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        String[] ageOfGivingBirthItems = {"Before age of 30", "After age of 30", "No children"};
+        ArrayAdapter<String> adapterAgeOfGivingBirth = new ArrayAdapter<>(this, R.layout.age_of_giving_birth_items, ageOfGivingBirthItems);
+        ageOfGivingBirthObj.setAdapter(adapterAgeOfGivingBirth);
+
+        ageOfGivingBirthObj.setOnItemClickListener((adapterView, view, i1, l) -> {
+            if(i1 >=0) {
+                hasItemSelectedAgeOfGivingBirth = true;
+                ageOfGivingBirth = adapterAgeOfGivingBirth.getItem(i1);
+                ageOfGivingBirthObj.setError(null);
+            }
+        });
+
+        String[] mensturationAgeItems = {"Above age 14", "Between age of 12 and 14", "Below age 12"};
+        ArrayAdapter<String> adapterMensturationAge = new ArrayAdapter<>(this, R.layout.mensturation_age_items, mensturationAgeItems);
+        mensturationAgeObj.setAdapter(adapterMensturationAge);
+
+        mensturationAgeObj.setOnItemClickListener((adapterView, view, i1, l) -> {
+            if(i1 >=0) {
+                hasItemSelectedMensturationAge = true;
+                mensturationAge = adapterMensturationAge.getItem(i1);
+                mensturationAgeObj.setError(null);
+            }
+        });
+
+        String[] menopauseAgeItems = {"Not applicable", "Below age 50", "Above age 50"};
+        ArrayAdapter<String> adapterMenopauseAge = new ArrayAdapter<>(this, R.layout.menopause_age_items, menopauseAgeItems);
+        menopauseAgeObj.setAdapter(adapterMenopauseAge);
+
+        menopauseAgeObj.setOnItemClickListener((adapterView, view, i1, l) -> {
+            if(i1 >=0) {
+                hasItemSelectedMenopauseAge = true;
+                menopauseAge = adapterMenopauseAge.getItem(i1);
+                menopauseAgeObj.setError(null);
             }
         });
 
         thirdToFourth.setOnClickListener(view -> {
             didYouHaveBreastCancerObj = findViewById(R.id.didYouHaveBreastCancer);
-            ageOfGivingBirthObj = findViewById(R.id.ageOfGivingBirth);
-            mensturationAgeObj = findViewById(R.id.mensturationAge);
-            menopauseAgeObj = findViewById(R.id.menopauseAge);
             doYouBreastFeedObj = findViewById(R.id.doYouBreastFeed);
 
             isAllFieldsChecked = CheckAllFields();
             if(isAllFieldsChecked) {
                 didYouHaveBreastCancer = didYouHaveBreastCancerObj.isChecked()? didYouHaveBreastCancerObj.getTextOn().toString() : didYouHaveBreastCancerObj.getTextOff().toString();
-                ageOfGivingBirth = ageOfGivingBirthObj.getText().toString();
-                mensturationAge = mensturationAgeObj.getText().toString();
-                menopauseAge = menopauseAgeObj.getText().toString();
                 doYouBreastFeed = doYouBreastFeedObj.isChecked()? doYouBreastFeedObj.getTextOn().toString() : doYouBreastFeedObj.getTextOff().toString();
 
                 Intent i12 = new Intent(getApplicationContext(), MainActivity6.class);
@@ -99,31 +130,24 @@ public class MainActivity5 extends AppCompatActivity {
 
     private boolean CheckAllFields() {
         boolean isChecked = true;
-        if (ageOfGivingBirthObj.length() == 0) {
-            ageOfGivingBirthObj.setError("This field is required");
-            isChecked = false;
-        } else if(ageOfGivingBirthObj.length()>3) {
-            ageOfGivingBirthObj.setError("Must not be more than 3 digits");
-            isChecked = false;
-        }
 
-        if (mensturationAgeObj.length() == 0) {
-            mensturationAgeObj.setError("This field is required");
-            isChecked = false;
-        } else if(mensturationAgeObj.length()>3) {
-            mensturationAgeObj.setError("Must not be more than 3 digits");
-            isChecked = false;
-        }
-
-        if (menopauseAgeObj.length() == 0) {
-            menopauseAgeObj.setText("0");
-        } else if(menopauseAgeObj.length()>3) {
-            menopauseAgeObj.setError("Must not be more than 3 digits");
-            isChecked = false;
-        }
-
-        if(!hasItemSelected) {
+        if(!hasItemSelectedBodyStructure) {
             bodyStructureObj.setError("Must select an item");
+            isChecked = false;
+        }
+
+        if(!hasItemSelectedAgeOfGivingBirth) {
+            ageOfGivingBirthObj.setError("Must select an item");
+            isChecked = false;
+        }
+
+        if(!hasItemSelectedMensturationAge) {
+            mensturationAgeObj.setError("Must select an item");
+            isChecked = false;
+        }
+
+        if(!hasItemSelectedMenopauseAge) {
+            menopauseAgeObj.setError("Must select an item");
             isChecked = false;
         }
         // after all validation return true.

@@ -12,10 +12,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/statusBar"
-        android:divider="@drawable/empty_tall_divider2"
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:padding="20dp"
+        android:divider="@drawable/empty_tall_divider2"
         android:showDividers="middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,39 +49,59 @@
             tools:checked="false"
             tools:ignore="UseSwitchCompatOrMaterialXml,VisualLintButtonSize" />
 
-        <EditText
-            android:id="@+id/ageOfGivingBirth"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/statusBar"
-            android:ems="10"
-            android:hint="Age of giving birth?"
-            android:inputType="number"
-            android:textColor="@color/statusBar"
-            android:textColorHint="#AD1457" />
+            android:hint="Select Age of giving birth">
 
-        <EditText
-            android:id="@+id/mensturationAge"
+            <AutoCompleteTextView
+                android:id="@+id/ageOfGivingBirth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:textColor="@color/statusBar"
+                android:textColorHint="#AD1457"
+                app:simpleItemSelectedColor="#AD1457"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/statusBar"
-            android:ems="10"
-            android:hint="Mensturation Age?"
-            android:inputType="number"
-            android:textColor="@color/statusBar"
-            android:textColorHint="#AD1457" />
+            android:hint="Select Mensuration Age">
 
-        <EditText
-            android:id="@+id/menopauseAge"
+            <AutoCompleteTextView
+                android:id="@+id/mensturationAge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:textColor="@color/statusBar"
+                android:textColorHint="#AD1457"
+                app:simpleItemSelectedColor="#AD1457"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/statusBar"
-            android:ems="10"
-            android:hint="Menopause Age?"
-            android:inputType="number"
-            android:textColor="@color/statusBar"
-            android:textColorHint="#AD1457" />
+            android:hint="Select Menopause Age">
 
+            <AutoCompleteTextView
+                android:id="@+id/menopauseAge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:textColor="@color/statusBar"
+                android:textColorHint="#AD1457"
+                app:simpleItemSelectedColor="#AD1457"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
@@ -97,7 +117,8 @@
                 android:inputType="none"
                 android:textColor="@color/statusBar"
                 android:textColorHint="#AD1457"
-                app:simpleItemSelectedColor="#AD1457" />
+                app:simpleItemSelectedColor="#AD1457"
+                tools:ignore="VisualLintTextFieldSize" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Switch
@@ -122,7 +143,7 @@
             android:id="@+id/thirdToFourth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/next"
+            android:text="@string/check_report"
             tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>

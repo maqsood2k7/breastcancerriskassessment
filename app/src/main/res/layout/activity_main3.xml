@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/headTextFamilyHistory"
+            android:id="@+id/headTextAdvancedAssessment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/personal_information"
@@ -56,7 +56,7 @@
             android:textColorHint="#AD1457" />
 
         <Switch
-            android:id="@+id/hasAnyoneInFamily"
+            android:id="@+id/lumps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="false"
@@ -89,7 +89,7 @@
             tools:ignore="VisualLintTextFieldSize" />
 
         <Button
-            android:id="@+id/secondToThird"
+            android:id="@+id/fifthToSixth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/next"

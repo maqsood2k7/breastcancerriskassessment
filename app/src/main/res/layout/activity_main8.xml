@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/breast_cancer3"
     android:backgroundTintMode="screen"
-    tools:context=".MainActivity6">
+    tools:context=".MainActivity8">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,10 +58,6 @@
             android:layout_height="wrap_content"
             android:text="Detailed Report" />
 
-        <Button
-            android:id="@+id/fourthToFifth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Advanced Assessment >>" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
